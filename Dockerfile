@@ -1,9 +1,9 @@
-FROM alpine:3.4
+FROM alpine:3.3
 
-RUN apk add --no-cache python3 && \
-    python3 -m ensurepip && \
-    rm -r /usr/lib/python*/ensurepip && \
-    pip3 install --upgrade pip setuptools && \
-    rm -r /root/.cache
+RUN apk add --no-cache python3
+RUN python3 -m ensurepip
+RUN rm -r /usr/lib/python*/ensurepip
+RUN pip3 install --upgrade pip setuptools flask
+RUN rm -r /root/.cache
 	
 CMD /bin/sh
