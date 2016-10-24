@@ -1,0 +1,26 @@
+{
+  "push_data": {
+    "pushed_at": 1471962479,
+    "images": [],
+    "tag": "latest",
+    "pusher": "atsnngs"
+  },
+  "callback_url": "https://registry.hub.docker.com/u/atsnngs/phantomjs/hook/2djideee0fhf24hdfeaceaii2i4gdd5g1/",
+  "repository": {
+    "status": "Active",
+    "description": "Dockerfile for PhantomJS",
+    "is_trusted": true,
+    "full_description": "docker-phantomjs\n================\n\n[![Docker Automated buil](https://img.shields.io/docker/automated/atsnngs/phantomjs.svg?maxAge=2592000)](https://hub.docker.com/r/atsnngs/phantomjs/)\n\nDockerfile for Phantom JS\n\nhttps://hub.docker.com/r/atsnngs/phantomjs/\n\nQuick Start\n-----------\n\n```sh\ndocker pull atsnngs/phantomjs\ndocker run --rm -v $(pwd)/examples:/examples atsnngs/phantomjs \\\n  --config=/examples/config.json /examples/trending.js\n```\n\nAuthor\n------\n\n[Atushi Nagase]\n\nLicense\n-------\n\nCopyright &copy; 2016 [Atushi Nagase]. All rights reserved.\n\n[Atushi Nagase]: http://ngs.io/\n",
+    "repo_url": "https://hub.docker.com/r/atsnngs/phantomjs",
+    "owner": "atsnngs",
+    "is_official": false,
+    "is_private": false,
+    "name": "phantomjs",
+    "namespace": "atsnngs",
+    "star_count": 1,
+    "comment_count": 0,
+    "date_created": 1471857679,
+    "dockerfile": "FROM ubuntu:14.04\nMAINTAINER Atsushi Nagase<a@ngs.io>\n\nENV PHANTOM_JS phantomjs-2.1.1-linux-x86_64\n\nRUN apt-get update -y && \\\n  apt-get -y --no-install-recommends install \\\n  build-essential \\\n  chrpath \\\n  libssl-dev \\\n  libxft-dev \\\n  libfreetype6 \\\n  libfreetype6-dev \\\n  libfontconfig1 \\\n  libfontconfig1-dev\n\nADD https://bitbucket.org/ariya/phantomjs/downloads/$PHANTOM_JS.tar.bz2 /var/src/\nRUN cd /var/src && tar -C /usr/local --strip 1 -xjf $PHANTOM_JS.tar.bz2 && rm $PHANTOM_JS.tar.bz2\nENTRYPOINT [\"/usr/local/bin/phantomjs\"]\n\n",
+    "repo_name": "atsnngs/phantomjs"
+  }
+}
